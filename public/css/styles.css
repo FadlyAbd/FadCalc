@@ -1,0 +1,399 @@
+
+.title-dari-card{
+  text-align: left;
+}
+
+.nav-img-left{
+  width: 50px; 
+  height: 50px;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+@keyframes slideOutToBottom {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+@keyframes slideInFromSide {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+@keyframes slideOutToSide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+.card {
+    opacity: 1;
+  }
+
+.animated-card{
+  opacity: 0;
+  border: none;
+}
+
+.card-home .card-body,
+.card .card-home{
+  border: none;
+  border-radius: 20px !important;
+  background-color: rgb(192, 196, 200) !important;
+}
+
+.slide-in {
+    opacity: 1;
+    animation: slideInFromBottom 1.5s ease-out forwards;
+  }
+
+.slide-out {
+    opacity: 0;
+    animation: slideOutToBottom 1.5s ease-out forwards;
+  }
+
+.animated-text {
+    opacity: 0;
+  }
+
+.slide-in-x {
+    opacity: 1;
+    animation: slideInFromSide 1s ease-out forwards;
+  }
+
+.slide-out-x {
+    opacity: 0;
+    animation: slideOutToSide 1s ease-out forwards;
+  }   
+.section-iya {
+      padding-top: 75px;
+      padding-bottom: 100px;
+      justify-content: center !important;
+      text-align: center !important;
+  }
+
+.section-ya{
+  padding-top: 175px !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding-bottom: 175px;
+}
+
+.c-text{
+  color: antiquewhite;
+}
+
+.circle-image img {
+    display: flex;
+    width: 250px;   
+    height: 250px;
+    border-radius: 50%;   
+    object-fit: cover;  
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid white;
+  }
+
+.container{
+  border: none !important;
+  justify-content: center;
+}
+
+.body-calc{
+  justify-content: left;
+}
+
+#calculator{
+  justify-content: left !important;
+  border-radius: 30px;
+  font-family: Arial,sans-serif;
+  background-color: #383838;
+  padding:2px;
+  max-width: auto;
+  overflow: hidden;
+}
+
+#calculator:hover{
+  transform:scale(1.05);
+  transition: transform 1s ease;
+}
+
+#display{
+  width:150px;
+  height:40px;
+  padding: 15px;
+  font-size: 3rem;
+  border:none;
+  text-align: left;
+  border-radius: 10px;
+  background-color: #c2c2c9;
+  color: black;
+  margin-top: 10px;
+}
+
+#keys{
+  justify-content: center !important;
+  display: grid;
+  grid-template-columns: repeat(4, 0fr);
+  padding:10px;
+  gap: 5px;
+}
+
+.btn-btn-buatan{
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border:none;
+  background-color: hsl(190, 16%, 69%);
+  font-size: 1.5rem;
+  color:rgb(247, 247, 247);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.operasi-btn{
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border:none;
+  background-color: hsl(43, 100%, 51%);
+  font-size: 1.5rem;
+  color:rgb(247, 247, 247);
+  font-weight: bold;
+  cursor: pointer; 
+}
+
+.hasil-btn{
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border:none;
+  background-color: hsl(126, 100%, 37%);
+  font-size: 1.5rem;
+  color:rgb(247, 247, 247);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hapus-btn{
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border:none;
+  background-color: hsl(0, 100%, 43%);
+  font-size: 1.5rem;
+  color:rgb(247, 247, 247);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-btn-buatan:hover{
+  background-color: hsl(190, 16%, 75%);
+}
+
+.btn-btn-buatan:active{
+  background-color: hsl(190, 16%, 82%);
+}
+
+.operasi-btn:hover{
+  background-color: hsl(43, 100%, 59%);
+}
+
+.operasi-btn:active{
+  background-color: hsl(43, 100%, 66%);
+}
+
+.hasil-btn:hover{
+  background-color: hsl(126, 100%, 42%);
+}
+
+.hasil-btn:active{
+  background-color: hsl(126, 100%, 46%);
+}
+
+.hapus-btn:hover{
+  background-color: hsl(0, 100%, 47%);
+}
+
+.hapus-btn:active{
+  background-color: hsl(0, 100%, 51%);
+}
+
+.btn-btn-bawah{
+  text-decoration: none;
+  padding:10px 20px 10px 20px;
+  display: inline-block;
+  background-color: #9e9494;
+  border: none;
+  font-size: 1.8rem;
+  color: azure;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-btn-bawah:hover{
+  background-color: #aea4a4;
+  color:rgb(242, 255, 255);
+  transform: scale(1.1);
+  transition: transform 1s ease;
+}
+
+.btn-btn-lain{
+  text-decoration: none;
+  padding: 10px;
+  display:inline-block;
+  background-color: rgba(30, 82, 214, 0.741);
+  color:white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.btn-btn-lain:hover{
+  background-color: rgba(17, 60, 167, 0.741);
+  color:rgb(0, 62, 143);
+  transform: scale(0.9);
+  transition: transform 1s ease;
+}
+
+.card-hidden{
+  border: none;
+  padding: 10px;
+}
+
+.text-pilih{
+  color: rgb(65, 160, 85);
+  padding:20px;
+}
+
+.text-pilih:hover{
+  color: rgb(96, 234, 125);
+}
+
+.card-cp{
+  margin-bottom: 30px;
+  margin-left: 30px;
+  background-color: rgb(182, 219, 222);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-cp:hover{
+  transform: scale(1.05);
+  transition: transform 1s ease;
+}
+
+.card-img-cp{
+  border-radius: 10px;
+}
+
+.card-jrk{
+  overflow: hidden;
+  margin-left: 30px;
+  background-color: rgb(182, 219, 222);
+  border: none;
+  border-radius: 10px; 
+}
+
+.card-jrk:hover{
+  transform: scale(1.05);
+  transition: transform 1s ease;
+}
+
+.card-img-sj{ 
+  border-radius: 10px;
+}
+
+.card-cope{
+  background-color: rgb(111, 232, 232);
+  justify-content: center;
+  padding: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border: none;
+}
+
+.label-cp{
+  margin: 5px;
+  border: none;
+}
+
+.input-cp{
+  border: none;
+  border-radius: 20px;
+  font-size: 1.3rem;
+}
+
+.btn-btn-rst{
+  color: white;
+  background-color: rgb(106, 179, 227);
+  margin: 5px 10px;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 20px;
+}
+
+.btn-btn-rst:hover{
+  background-color: rgb(56, 166, 238);
+  transform: scale(0.9);
+  transition: transform 0.5s ease;
+}
+
+.btn-btn-rsts{
+  color: white;
+  background-color: rgb(20, 204, 255);
+  margin: 5px 10px;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 20px;
+}
+
+.btn-btn-rsts:hover{
+  background-color: rgb(1, 122, 155);
+  transform: scale(0.9);
+  transition: transform 0.5s ease;
+}
+
+.btn-btn-nav{
+  color: cadetblue;
+  background-color: rgb(0, 233, 233);
+}
+
+input[type="number"] {
+  width: 100px;
+}
+
+.card-jauh{
+  background-color: #4db6fb;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+.pilih-stn-jarak{
+  border: none;
+  border-radius: 5px;
+}
