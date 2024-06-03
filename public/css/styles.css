@@ -340,7 +340,7 @@
   border: none;
 }
 
-.input-cp{
+.input-cp{ 
   border: none;
   border-radius: 20px;
   font-size: 1.3rem;
@@ -394,6 +394,16 @@ input[type="number"] {
 }
 
 .pilih-stn-jarak{
+  margin-top: 5px;
   border: none;
   border-radius: 5px;
+}
+
+.card-jauhatur{
+  margin-top: 20px;
+  color: white;
+  background-color: #9a9b9b;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
 }
