@@ -83,10 +83,10 @@
     animation: slideOutToSide 1s ease-out forwards;
   }   
 .section-iya {
-      padding-top: 75px;
-      padding-bottom: 100px;
-      justify-content: center !important;
-      text-align: center !important;
+  padding-top: 75px;
+  padding-bottom: 100px;
+  justify-content: center !important;
+  text-align: center !important;
   }
 
 .section-ya{
@@ -311,7 +311,7 @@
 .card-jrk{
   overflow: hidden;
   margin-left: 30px;
-  background-color: rgb(182, 219, 222);
+  background-color: rgb(222, 211, 182);
   border: none;
   border-radius: 10px; 
 }
