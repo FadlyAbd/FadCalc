@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/static/Fad.png" type="image/png">
+    <title>FadCalc Satuan Suhu</title>
+</head>
+<body> 
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+    
+            <div class="container">
+                <div style="margin-right: auto;">
+                    <a class="navbar-start navbar-brand mr-4" href="/#home"> 
+                        <img src="static/FAD.png" type="image/png" class="nav-img-left">
+                        <span class="badge text bg-primary" style="width:auto; height:auto;  font-size: xx-large;">FadCalc</span>
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav" style="margin-left: auto;">
+                        <a class="nav-item nav-link" href="/#home"><input type="submit" class="btn btn-" value="Home"></a>
+                        <a class="nav-item nav-link" href="/#GetMore"><input type="submit" class="btn btn-" value="Kalkulator lainnya"></a>
+                        <a class="nav-item nav-link" href="/#contact"><input type="submit" class="btn btn-" value="Kontak"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>  
+    <section class="section-iya">
+        <div class="container"> 
+            <h1 class="animated-text text-dingin">Kalkulator Konversi Suhu</h1> 
+            <div class="row"> 
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 col-12"> 
+                    <div class="card card-sejuk"> 
+                        <div> 
+                            <label for="inputUnit">Dari:</label>
+                            <input type="number" id="inputValue" type="number" class="input-cp">
+                            <select id="inputUnit" class="input-cp">
+                                <option value="Celsius">Celsius</option>
+                                <option value="Fahrenheit">Fahrenheit</option>
+                                <option value="Kelvin">Kelvin</option>
+                                <option value="Reamur">Reamur</option>
+                            </select>
+                            <br><br>
+                            <label for="outputUnit">Ke:</label>
+                            <input type="text" id="result" class="input-cp" readonly>
+                            <select id="outputUnit" class="input-cp">
+                                <option value="Celsius">Celsius</option>
+                                <option value="Fahrenheit">Fahrenheit</option>
+                                <option value="Kelvin">Kelvin</option>
+                                <option value="Reamur">Reamur</option>
+                            </select>
+                            <br><br>
+                            <!---- <button id="convertBtn">Konversi</button> ----> 
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 col-12">
+                    <div class="card card-jauhatur">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>Cara memakai :</h3>
+                                <p>- Untuk menulis desimal, tulis dengan koma "," Contoh: "2,5"</p>
+                                <p>- Untuk menulis angka >3 digit seperti ribuan,jutaan, dll cukup tulis angkanya Contoh: "1000"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </section>
+    <script src="js/events.js"></script>
+</body>
