@@ -31,6 +31,10 @@ app.get('/satuansuhu', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'suhu.html'));
 });
 
+app.get('/satuanberat', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'berat.html'));
+});
+
 app.use((req, res, next) => {
     res.status(404).send("Page Not Find");
   });

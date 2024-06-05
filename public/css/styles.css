@@ -83,14 +83,16 @@
     animation: opacity slideOutToSide 1s ease-out forwards;
   }   
 .section-iya {
+  margin: 0px;
   padding-top: 75px;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
   justify-content: center !important;
   text-align: center !important;
   }
 
 .section-ya{
-  padding-top: 160px !important;
+  margin: 0px;
+  padding-top: 220px !important;
   justify-content: center !important;
   text-align: center !important;
   padding-bottom: 175px;
@@ -278,7 +280,9 @@
 
 .card-hidden{
   border: none;
-  padding: 10px;
+  padding-bottom: 10px;
+  padding-top: 1px;
+  margin-top: 1px;
 }
 
 .text-pilih{
