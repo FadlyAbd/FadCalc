@@ -1,15 +1,4 @@
-window.addEventListener('beforeunload', function () {
-  sessionStorage.setItem('scrollPos', window.scrollY);
-});
- 
-window.addEventListener('load', function () {
-  const scrollPos = sessionStorage.getItem('scrollPos');
-  if (scrollPos) {
-      window.scrollTo(0, parseInt(scrollPos));
-  }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
 
     sections.forEach(section => { 
@@ -32,16 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
             cards.forEach(card => {
               card.classList.remove('slide-in');
               card.classList.add('slide-out');
-            });
+            }); 
             texts.forEach(text => {
+              text.classList.add('slude-out-x');
               text.classList.remove('slide-in-x');
-              text.classList.add('slide-out-x');
             });
           }
         });
       };
 
-      observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+      observer = new IntersectionObserver(handleIntersection, { 
+        threshold: 0.5,
+        root: null,
+        rootMargin: "0px" 
+      });
       observer.observe(section);
     });
   });
@@ -110,10 +103,7 @@ function calculatePermutation() {
   const result = permutation(n, r);
   const formattedResult = isNaN(result) ? result : formatNumber(result);
   document.getElementById('result').textContent = `Permutasi ${n}P${r} adalah ${formattedResult}`;
-}
-
-document.getElementById('distance').addEventListener('blur', convertDistance);
-document.getElementById('toUnit').addEventListener('change', convertDistance);
+} 
 
 function convertDistance() {
   const unitConversions = {
@@ -144,52 +134,104 @@ function convertDistance() {
 
   const options = { maximumFractionDigits: 2, minimumFractionDigits: 2 };
   result.value = convertedDistance.toLocaleString('id-ID', options);
-}
-
-document.getElementById('inputValue').addEventListener('blur', convertTemperature);
-document.getElementById('outputUnit').addEventListener('change', convertTemperature);
+} 
 
 function convertTemperature() {
-const inputValue = parseFloat(document.getElementById('inputValue').value.replace(/,\d*/, '.'));
+  const inputValue = parseFloat(document.getElementById('inputValue').value.replace(/,\d*/, '|').replace('|', '.'));
   const inputUnit = document.getElementById('inputUnit').value;
   const outputUnit = document.getElementById('outputUnit').value; 
   let result;
   if (inputUnit === outputUnit) {
-      result = inputValue;
+    result = inputValue;
   } else if (inputUnit === 'Celsius') {
-      if (outputUnit === 'Fahrenheit') {
-        result = (inputValue * 9/5) + 32;
-      } else if (outputUnit === 'Kelvin') {
-          result = inputValue + 273.15;
-      } else if (outputUnit === 'Reamur') {
-        result = inputValue * 4/5;
-      }
+    if (outputUnit === 'Fahrenheit') {
+      result = (inputValue * 9/5) + 32;
+    } else if (outputUnit === 'Kelvin') {
+        result = inputValue + 273.15;
+    } else if (outputUnit === 'Reamur') {
+      result = inputValue * 4/5;
+    }
   } else if (inputUnit === 'Fahrenheit') {
-      if (outputUnit === 'Celsius') {
-        result = (inputValue - 32) * 5/9;
-      } else if (outputUnit === 'Kelvin') {
-        result = (inputValue - 32) * 5/9 + 273.15;
-      } else if (outputUnit === 'Reamur') {
-        result = (inputValue - 32) * 4/9;
-      }
+    if (outputUnit === 'Celsius') {
+      result = (inputValue - 32) * 5/9;
+    } else if (outputUnit === 'Kelvin') {
+      result = (inputValue - 32) * 5/9 + 273.15;
+    } else if (outputUnit === 'Reamur') {
+      result = (inputValue - 32) * 4/9;
+    }
   } else if (inputUnit === 'Kelvin') {
-      if (outputUnit === 'Celsius') {
-        result = inputValue - 273.15;
-      } else if (outputUnit === 'Fahrenheit') {
-        result = (inputValue - 273.15) * 9/5 + 32;
-      } else if (outputUnit === 'Reamur') {
-        result = (inputValue - 273.15) * 4/5;
-      }
+    if (outputUnit === 'Celsius') {
+      result = inputValue - 273.15;
+    } else if (outputUnit === 'Fahrenheit') {
+      result = (inputValue - 273.15) * 9/5 + 32;
+    } else if (outputUnit === 'Reamur') {
+      result = (inputValue - 273.15) * 4/5;
+    }
   } else if (inputUnit === 'Reamur') {
-      if (outputUnit === 'Celsius') {
-        result = inputValue * 5/4;
-      } else if (outputUnit === 'Fahrenheit') {
-        result = (inputValue * 9/4) + 32;
-      } else if (outputUnit === 'Kelvin') {
-        result = (inputValue * 5/4) + 273.15;
-      }
-  }
-  const options = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
-  let formattedResult = result.toLocaleString('id-ID', options); 
-  document.getElementById('result').value = `${formattedResult} `;
+    if (outputUnit === 'Celsius') {
+      result = inputValue * 5/4;
+    } else if (outputUnit === 'Fahrenheit') {
+      result = (inputValue * 9/4) + 32;
+    } else if (outputUnit === 'Kelvin') {
+      result = (inputValue * 5/4) + 273.15;
+    }
+  } 
+  const options = { maximumFractionDigits: 2, minimumFractionDigits: 2 };
+  let formattedResult = result.toLocaleString('id-ID', options);  
+  document.getElementById('result').value = `${formattedResult}`;
 }
+
+function convertWeight() {
+  const unitBerat = {
+    kg: 1,
+    hg: 0.1,
+    dag: 0.01,
+    g: 0.001,
+    dg: 0.0001,
+    cg: 0.00001,
+    mg: 0.000001
+  }
+
+  const dariUnit = document.getElementById("dariUnit").value;
+  const keUnit = document.getElementById("keUnit").value;
+  let weightInput = document.getElementById("weight").value;
+  
+  
+  const weight = parseFloat(weightInput.replace(/,\d*/, '|').replace('|', '.')); 
+  const res = document.getElementById("res");
+
+  if (isNaN(weight)) {
+    result.value = "Error! Input tidak valid";
+    return;
+  };
+
+  const weightInKg = weight * unitBerat[dariUnit]; 
+  const convertedWeight = weightInKg / unitBerat[keUnit]; 
+
+  const options = { maximumFractionDigits: 2, minimumFractionDigits: 2 };
+  res.value = convertedWeight.toLocaleString('id-ID', options);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
