@@ -1,3 +1,2 @@
-node_modules/
-b/
-public/asset/bootstrap-5.0.2-dist/
+node_modules/ 
+public/asset/*
