@@ -6,6 +6,14 @@ app.set('view engine', 'html');
 const { EventEmitter } = require('events');
 const emitter = new EventEmitter();
 
+function ensureSecure(req, res, next) {
+    if (req.headers['x-forwarded-proto'] == 'http') { 
+        return res.redirect('https://' + req.headers.host + req.url);
+    } 
+    next();
+}
+
+app.use(ensureSecure);
 
 emitter.on('sectionOpen', (sectionId) => {
     console.log(`Section ${sectionId} opened`);
